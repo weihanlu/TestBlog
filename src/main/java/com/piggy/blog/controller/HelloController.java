@@ -6,7 +6,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
+<<<<<<< HEAD
  *
+=======
+ * hello my blog接口类
+>>>>>>> master
  * @author 韦函露
  */
 
