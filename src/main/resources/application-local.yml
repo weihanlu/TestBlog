@@ -1,13 +1,12 @@
 #server:
 #  port: 3389
-#web:
-#  upload-path: /home/wangyu/wifiLocation/src/main/resources
-#spring:
-#  datasource:
-#    url: jdbc:mysql://localhost:3306/wifilocation?useSSL=true
-#    username: root
-#    password: root
-#    driver-class-name: com.mysql.jdbc.Driver
-#  jpa:
-#    hibernate:
-#      ddl-auto: update
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/blogdatabase?useSSL=false
+    username: root
+    password: 930529ab
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update

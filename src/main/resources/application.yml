@@ -1,8 +1,8 @@
 # 基本配置
-#spring:
-#  profiles:
-#    active: local
-#
+spring:
+  profiles:
+    active: local
+
 #  redis:
 #    host: localhost
 #    port: 6379
