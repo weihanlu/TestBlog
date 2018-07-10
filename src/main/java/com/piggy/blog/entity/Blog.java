@@ -17,7 +17,7 @@ public class Blog {
     @Id
     @GeneratedValue
     @Column(unique = true, name = "blog_id")
-    private int blogId;
+    private Integer blogId;
 
     @Column
     private String title;
