@@ -32,7 +32,6 @@ public class BlogServiceImpl implements BlogService {
     @Override
     public Resp save(BlogSaveRequest blogSaveRequest) {
         Blog blog = new Blog();
-        blog.setBlogId(blogSaveRequest.getBlogId());
         blog.setTitle(blogSaveRequest.getTitle());
         blog.setAbs(blogSaveRequest.getAbs());
         blog.setContent(blogSaveRequest.getContent());

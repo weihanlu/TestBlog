@@ -12,11 +12,6 @@ import java.util.Date;
 public class BlogSaveRequest {
 
     /**
-     * 博文ID
-     */
-    private Integer blogId;
-
-    /**
      * 博文标题
      */
     private String title;
@@ -34,7 +29,7 @@ public class BlogSaveRequest {
     /**
      * 博文创建时间
      */
-    private Date createTime;
+    private Long createTime;
 
     /**
      * 博文作者

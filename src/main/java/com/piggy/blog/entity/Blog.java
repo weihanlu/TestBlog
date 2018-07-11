@@ -29,7 +29,7 @@ public class Blog {
     private String content;
 
     @Column(name = "create_time")
-    private Date createTime;
+    private Long createTime;
 
     @Column
     private String username;
