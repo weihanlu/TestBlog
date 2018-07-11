@@ -33,6 +33,12 @@ public class BlogController {
     @Autowired
     private BlogService blogService;
 
+    @GetMapping(value = "/list")
+    @ResponseBody
+    public Resp blogAll(){
+        return blogService.getBlogAll();
+    }
+
     @PostMapping(value = "/list")
     @ResponseBody
     public Resp blogList(@RequestBody BlogListRequest blogListRequest) throws BlogException{

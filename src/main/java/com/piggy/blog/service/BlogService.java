@@ -14,6 +14,11 @@ import java.util.List;
 public interface BlogService {
 
     /**
+     * 获取所有博客列表
+     * @return Resp
+     */
+    Resp getBlogAll();
+    /**
      * 获取用户的博客列表
      * @param blogListRequest
      * @return Resp
@@ -21,11 +26,16 @@ public interface BlogService {
     Resp getBlogList(BlogListRequest blogListRequest);
 
     /**
-     * 获取用户的博客列表
+     * 保存编辑的博客
      * @param blogSaveRequest
      * @return Resp
      */
     Resp save(BlogSaveRequest blogSaveRequest);
 
+    /**
+     * 删除博客
+     * @param blogDeleteRequest
+     * @return Resp
+     */
     Resp delete(BlogDeleteRequest blogDeleteRequest);
 }

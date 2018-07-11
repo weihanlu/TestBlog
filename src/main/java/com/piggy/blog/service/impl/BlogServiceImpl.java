@@ -25,6 +25,11 @@ public class BlogServiceImpl implements BlogService {
     private BlogDao blogDao;
 
     @Override
+    public Resp getBlogAll() {
+        return RespUtil.successResp(blogDao.findAll());
+    }
+
+    @Override
     public Resp getBlogList(BlogListRequest blogListRequest){
         return RespUtil.successResp(blogDao.findAllByUsername(blogListRequest.getUsername()));
     }
