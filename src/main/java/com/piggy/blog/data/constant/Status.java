@@ -27,12 +27,13 @@ public class Status {
         public String getMsg(){return msg;}
     }
 
-    public enum ApiErr {
+    public static enum ApiErr {
         /**
          * 接口返回状态错误码
          */
         SUCCESS(2000, "请求成功"),
-        PERMISSION_DENIED(2001, "无权限"),;
+        PERMISSION_DENIED(2001, "无权限"),
+        EMPTY_PARAM(2002,"参数为空");
 
         private Integer value;
         private String msg;

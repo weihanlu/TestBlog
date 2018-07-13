@@ -14,9 +14,11 @@ import com.piggy.blog.utils.RespUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.swing.*;
+import javax.validation.Valid;
 import java.util.logging.Logger;
 
 /**
@@ -41,19 +43,28 @@ public class BlogController {
 
     @PostMapping(value = "/list")
     @ResponseBody
-    public Resp blogList(@RequestBody BlogListRequest blogListRequest) throws BlogException{
+    public Resp blogList(@RequestBody @Valid BlogListRequest blogListRequest, BindingResult bindingResult) throws BlogException{
+        if(bindingResult.hasErrors()){
+            return RespUtil.errorResp(Status.ApiErr.EMPTY_PARAM.getCode(),Status.ApiErr.EMPTY_PARAM.getMsg());
+        }
         return blogService.getBlogList(blogListRequest);
     }
 
     @PostMapping(value = "/edit")
     @ResponseBody
-    public Resp blogSave(@RequestBody BlogSaveRequest blogSaveRequest){
+    public Resp blogSave(@RequestBody @Valid BlogSaveRequest blogSaveRequest, BindingResult bindingResult){
+        if(bindingResult.hasErrors()){
+            return RespUtil.errorResp(Status.ApiErr.EMPTY_PARAM.getCode(),Status.ApiErr.EMPTY_PARAM.getMsg());
+        }
         return blogService.save(blogSaveRequest);
     }
 
     @PostMapping(value = "/delete")
     @ResponseBody
-    public Resp blogDelete(@RequestBody BlogDeleteRequest blogDeleteRequest){
+    public Resp blogDelete(@RequestBody @Valid BlogDeleteRequest blogDeleteRequest, BindingResult bindingResult){
+        if(bindingResult.hasErrors()){
+            return RespUtil.errorResp(Status.ApiErr.EMPTY_PARAM.getCode(),Status.ApiErr.EMPTY_PARAM.getMsg());
+        }
         return blogService.delete(blogDeleteRequest);
     }
 }

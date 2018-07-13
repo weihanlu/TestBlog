@@ -1,7 +1,9 @@
 package com.piggy.blog.data.request;
 
 import lombok.Data;
+import org.hibernate.validator.constraints.NotBlank;
 
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 /**
@@ -14,6 +16,7 @@ public class BlogSaveRequest {
     /**
      * 博文标题
      */
+    @NotBlank
     private String title;
 
     /**
@@ -24,6 +27,7 @@ public class BlogSaveRequest {
     /**
      * 博文内容
      */
+    @NotBlank
     private String content;
 
     /**
